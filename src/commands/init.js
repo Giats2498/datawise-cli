@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const colors = require('colors');
+const gpath = require('path');
 const FrameworkManager = require("../lib/FrameworkManager");
 const LanguageManager = require("../lib/LanguageManager");
 const PathManager = require("../lib/PathManager");
@@ -37,10 +38,9 @@ const init = {
         currentPath = pathManager.getPath();
       }
     }
-  
-    const templatePath = `.\\src\\templates\\${currentFramework}\\${currentLanguage}`
+    const currDir = gpath.resolve(__dirname, '..');
+    const templatePath = `${currDir}\\templates\\${currentFramework}\\${currentLanguage}`
     const flag = checkIfExists(templatePath,currentPath);
-    console.log(flag);
     if(flag === 1 || flag === 2){
       const input = await inquirer.prompt([
         {

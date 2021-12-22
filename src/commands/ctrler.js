@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const colors = require('colors');
+const gpath = require('path');
 const {isValidName} = require("../utils/validation")
 const FrameworkManager = require("../lib/FrameworkManager");
 const LanguageManager = require("../lib/LanguageManager");
@@ -308,12 +309,13 @@ const ctrler = {
       isValidFlag = isValidName(options.name);
     }
     if(isValidFlag){
-      const templatePath = `.\\src\\templates\\${currentFramework}\\${currentLanguage}`
+      const currDir = gpath.resolve(__dirname, '..');
+      const templatePath = `${currDir}\\templates\\${currentFramework}\\${currentLanguage}`
  
      
       if(checkIfExists(templatePath,currentPath) === 2){
-
-        const controllerPath = `.\\src\\controller\\${currentFramework}\\${currentLanguage}`
+        
+        const controllerPath = `${currDir}\\controller\\${currentFramework}\\${currentLanguage}`
         let input = undefined;
         const flag = checkIfExists(`${controllerPath}\\test`,`${currentPath}\\${currentName}`);
         if(flag === 1 || flag === 2){
@@ -331,9 +333,9 @@ const ctrler = {
           this.remove({ name: currentName, path: currentPath });
           console.log("\nCreated 4 files");
           createDirectoryContents(controllerPath,currentPath)
-          createController(currentPath.replace(".",""),currentName);
+          createController(`\\${currentPath.replace(".","")}`,currentName);
           console.log("\nModified 6 files");
-          appendNewLines(currentPath.replace(".",""),currentName,currentLanguage);
+          appendNewLines(`\\${currentPath.replace(".","")}`,currentName,currentLanguage);
           console.log("\nController is initialized".yellow);
         }
        

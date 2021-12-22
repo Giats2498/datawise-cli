@@ -34,7 +34,6 @@ module.exports.checkIfExists =  function checkIfExists (templatePath, newProject
         }
       }
     }
-    console.log(countFiles,filesToCreate.length)
     if(countFiles === 0){
       return 2;
     }else if(countFiles === filesToCreate.length){

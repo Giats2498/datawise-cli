@@ -1,6 +1,6 @@
 {
   "name": "datawise-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CLI for automated templates",
   "main": "./bin/cli.js",
   "preferGlobal": true,
