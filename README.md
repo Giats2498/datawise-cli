@@ -24,7 +24,7 @@ Initialize tempalte with command `npx datawise-cli init`.
 # ✨ Features
 
 * **CLI Generator** - Run a single command to scaffold out a fully functional template or controller and get started quickly. See [Usage](#-usage) below.
-* **Super Speed** - The overhead for running a datawise CLI command is almost nothing. [It requires very few dependencies](https://github.com/Giats2498/datawise-cli/blob/main/package.json) (only 5 dependencies). Also, only the command to be executed will be required with node. So large the CLI with many commands will load equally as fast as a small one with a single command.
+* **Super Speed** - The overhead for running a datawise CLI command is almost nothing. [It requires very few dependencies](https://github.com/Giats2498/datawise-cli/blob/main/package.json) (only 6 dependencies). Also, only the command to be executed will be required with node. So large the CLI with many commands will load equally as fast as a small one with a single command.
 * **Documentation** - By default you can pass `--help` to the CLI to get help such as flag options and argument information.
 * **Configuration** - Datawise-cli can create or remove all of basic configurations like (framework,language,path) of project with a single command `npx datawise-cli framework set -react`.
 * **TypeScript (or not)** - Everything in the core of datawise-cli is written in Javascript and the generator can build fully configured TypeScript or plain JavaScript templates and controllers. By virtue of static properties in TypeScript the syntax is a bit cleaner in TypeScript—but everything will work no matter which language you choose.
