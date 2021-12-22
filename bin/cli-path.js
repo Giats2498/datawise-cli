@@ -4,7 +4,7 @@ const path = require("../src/commands/path");
 program
   .command("set")
   .description("Set path in project")
-  .option('-p, --path <path>', 'set config path')
+  .option('-p, --path <path>', 'Set config path')
   .action((options) => {
     path.set(options)
   });

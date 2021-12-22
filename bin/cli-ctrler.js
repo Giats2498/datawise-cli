@@ -3,16 +3,18 @@ const ctrler = require("../src/commands/ctrler");
 
 program
   .command("crt")
-  .option('-n, --name <name>', 'set name')
-  .option('-p, --path <path>', 'set config path')
+  .description("Create controller in project")
+  .option('-n, --name <name>', 'Set name')
+  .option('-p, --path <path>', 'Set config path')
   .action((options) => {
     ctrler.create(options)
   });
 
 program
   .command("rm")
-  .option('-n, --name <name>', 'set name')
-  .option('-p, --path <path>', 'set config path')
+  .description("Remove controller in project")
+  .option('-n, --name <name>', 'Set name')
+  .option('-p, --path <path>', 'Set config path')
   .action((options) => {
     ctrler.remove(options)
   });

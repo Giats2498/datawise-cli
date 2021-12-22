@@ -6,6 +6,7 @@ const LanguageManager = require("../lib/LanguageManager");
 const PathManager = require("../lib/PathManager");
 const {checkIfExists}  = require("../utils/common");
 const {createDirectoryContents}  = require("../utils/common");
+const  figlet = require('figlet');
 
 const language = require("./language");
 const framework = require("./framework");
@@ -51,14 +52,32 @@ const init = {
         }
       ]);
       if(input.flag){
+        await figlet('DATAWISE', function(err, data) {
+            if (err) {
+                console.log('Something went wrong...');
+                console.dir(err);
+                return;
+            }
+            console.log(data)
+            console.log("Created 7 files");
+            createDirectoryContents(templatePath,currentPath,undefined)
+            console.log("Template is initialized".yellow);
+        });
+        
+      }
+    }else{
+      await figlet('DATAWISE', function(err, data) {
+        if (err) {
+            console.log('Something went wrong...');
+            console.dir(err);
+            return;
+        }
+        console.log(data)
         console.log("Created 7 files");
         createDirectoryContents(templatePath,currentPath,undefined)
         console.log("Template is initialized".yellow);
-      }
-    }else{
-      console.log("Created 7 files");
-      createDirectoryContents(templatePath,currentPath,undefined)
-      console.log("Template is initialized".yellow);
+      });
+    
     }
     
   

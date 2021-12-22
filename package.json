@@ -1,6 +1,6 @@
 {
   "name": "datawise-cli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A CLI for automated templates",
   "main": "./bin/cli.js",
   "preferGlobal": true,
@@ -9,6 +9,7 @@
     "colors": "^1.4.0",
     "commander": "^8.3.0",
     "configstore": "^5.0.1",
+    "figlet": "^1.5.2",
     "inquirer": "^8.2.0",
     "inquirer-fuzzy-path": "^2.3.0"
   },
