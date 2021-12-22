@@ -52,12 +52,12 @@ const init = {
       ]);
       if(input.flag){
         console.log("Created 7 files");
-        createDirectoryContents(templatePath,currentPath)
+        createDirectoryContents(templatePath,currentPath,undefined)
         console.log("Template is initialized".yellow);
       }
     }else{
       console.log("Created 7 files");
-      createDirectoryContents(templatePath,currentPath)
+      createDirectoryContents(templatePath,currentPath,undefined)
       console.log("Template is initialized".yellow);
     }
     

@@ -43,7 +43,7 @@ module.exports.checkIfExists =  function checkIfExists (templatePath, newProject
     }    
 }
 
-module.exports.createDirectoryContents = function  createDirectoryContents (templatePath, newProjectPath) {
+module.exports.createDirectoryContents = function  createDirectoryContents (templatePath, newProjectPath,name) {
   try{
     fs.mkdirSync(`${CURR_DIR}\\${newProjectPath}`);
   }catch(error){
@@ -62,13 +62,22 @@ module.exports.createDirectoryContents = function  createDirectoryContents (temp
       const contents = fs.readFileSync(origFilePath, 'utf8');
       
       const writePath = `${CURR_DIR}\\${newProjectPath}\\${file}`;
-      console.log("+".green,`${newProjectPath}\\${file}`);
+      if(name !== undefined){
+        const newPath = newProjectPath.split("\\");
+        const findIndex = newPath.findIndex(element => element === "test");
+        newPath.splice(findIndex,1);
+
+        console.log("+".green,`${newPath.join('\\')}\\${name}\\${file}`);
+      }else{
+        console.log("+".green,`${newProjectPath}\\${file}`);
+      }
+     
       fs.writeFileSync(writePath, contents, 'utf8');
     } else if (stats.isDirectory()) {
       fs.mkdirSync(`${CURR_DIR}\\${newProjectPath}\\${file}`,{ recursive: true });
       
       // recursive call
-      createDirectoryContents(`${templatePath}\\${file}`, `${newProjectPath}\\${file}`);
+      createDirectoryContents(`${templatePath}\\${file}`, `${newProjectPath}\\${file}`,name);
     }
   }); 
   
