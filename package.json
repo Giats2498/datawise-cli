@@ -1,0 +1,32 @@
+{
+  "name": "datawise-cli",
+  "version": "1.0.0",
+  "description": "A CLI for automated templates",
+  "main": "index.js",
+  "bin": "./bin/cli.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^8.3.0",
+    "configstore": "^5.0.1",
+    "inquirer": "^8.2.0",
+    "inquirer-fuzzy-path": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CLI",
+    "Apps"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Giats2498/datawise-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Giats2498/datawise-cli/issues"
+  },
+  "homepage": "https://github.com/Giats2498/datawise-cli#readme",
+  "author": "Giats2498",
+  "license": "ISC"
+}
