@@ -15,16 +15,15 @@ module.exports.checkIfExists =  function checkIfExists (templatePath, newProject
       // get stats about the current file
       const stats = fs.statSync(origFilePath);
 
-     
+      const writePath = `${CURR_DIR}\\${newProjectPath}\\${file}`;
       if (stats.isFile()) {
         
-        const writePath = `${CURR_DIR}\\${newProjectPath}\\${file}`;
+        
         if (fs.existsSync(writePath)) {
           countFiles--;
         }
   
       } else if (stats.isDirectory()){
-        const writePath = `${CURR_DIR}\\${newProjectPath}`;
         if (fs.existsSync(writePath)) {
           countFiles--;
         }
@@ -35,6 +34,7 @@ module.exports.checkIfExists =  function checkIfExists (templatePath, newProject
         }
       }
     }
+    console.log(countFiles,filesToCreate.length)
     if(countFiles === 0){
       return 2;
     }else if(countFiles === filesToCreate.length){

@@ -21,7 +21,7 @@ const path = {
           excludeFilter: nodePath => nodePath == ".",
             // excludeFilter :: (String) -> Bool
             // excludeFilter to exclude some paths from the final list, e.g. "."
-          itemType: "any",
+          itemType: "directory",
             // itemType :: "any" | "directory" | "file"
             // specify the type of nodes to display
             // default value: "any"
