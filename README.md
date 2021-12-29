@@ -18,7 +18,7 @@ This is a cli for building templates and controllers for React.js and Next.js. T
 
 # 🚀 Getting Started
 
-Install package with command `npm install datawise-cli`.
+Install package with command `npm install -g datawise-cli`.
 Initialize tempalte with command `npx datawise-cli init`.
 
 # ✨ Features
